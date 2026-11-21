@@ -35,3 +35,12 @@ class BinaryTree:
                 return 0
             return 1 + total(node.left) + total(node.right)
         return total(self.__root)
+    
+    def count_leaves(self):
+        def leaves(node):
+            if not node:
+                return 0
+            if not node.left and not node.right:
+                return 1
+            return leaves(node.left) + leaves(node.right)
+        return leaves(self.__root)
