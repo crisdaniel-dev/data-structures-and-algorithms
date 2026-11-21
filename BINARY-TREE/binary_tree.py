@@ -28,3 +28,10 @@ class BinaryTree:
             return False
         else:
             return True
+        
+    def count(self):
+        def total(node):
+            if not node:
+                return 0
+            return 1 + total(node.left) + total(node.right)
+        return total(self.__root)
