@@ -22,3 +22,9 @@ class BinaryTree:
         if parent.right:
             return "Right child already exists"
         parent.right = Node(data)
+        
+    def is_empty(self):
+        if self.__root:
+            return False
+        else:
+            return True
