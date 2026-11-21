@@ -7,7 +7,7 @@ class BinaryTree:
         
     def set_root(self, data):
         if self.__root:
-            return "Root alrady exists"
+            return "Root already exists"
         self.__root = Node(data)
         
     def get_root(self):
@@ -44,3 +44,15 @@ class BinaryTree:
                 return 1
             return leaves(node.left) + leaves(node.right)
         return leaves(self.__root)
+    
+    def height(self):
+        def get_height(node):
+            if not node:
+                return 0
+            left_height = get_height(node.left)
+            right_height = get_height(node.right)
+            if left_height > right_height:
+                return 1 + left_height
+            else:
+                return 1 + right_height
+        return get_height(self.__root)
