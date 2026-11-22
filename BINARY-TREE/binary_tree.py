@@ -88,3 +88,13 @@ class BinaryTree:
             traverse(node.right)
         traverse(self.__root)
         print()
+        
+    def postorder(self):
+        def traverse(node):
+            if not node:
+                return
+            traverse(node.left)
+            traverse(node.right)
+            print(node.data, end=" ")
+        traverse(self.__root)
+        print()
