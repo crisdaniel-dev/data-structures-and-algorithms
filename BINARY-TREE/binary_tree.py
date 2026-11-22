@@ -68,3 +68,13 @@ class BinaryTree:
                 return result
             return find(node.right)
         return find(self.__root)
+    
+    def preorder(self):
+        def traverse(node):
+            if not node:
+                return
+            print(node.data, end=" ")
+            traverse(node.left)
+            traverse(node.right)
+        traverse(self.__root)
+        print()
