@@ -28,7 +28,7 @@ class BinaryTree:
             return False
         else:
             return True
-        
+    
     def count(self):
         def total(node):
             if not node:
@@ -44,7 +44,7 @@ class BinaryTree:
                 return 1
             return leaves(node.left) + leaves(node.right)
         return leaves(self.__root)
-    
+        
     def height(self):
         def get_height(node):
             if not node:
@@ -56,3 +56,15 @@ class BinaryTree:
             else:
                 return 1 + right_height
         return get_height(self.__root)
+    
+    def search(self, data):
+        def find(node):
+            if not node:
+                return None
+            if node.data == data:
+                return node
+            result = find(node.left)
+            if result:
+                return result
+            return find(node.right)
+        return find(self.__root)
