@@ -78,3 +78,13 @@ class BinaryTree:
             traverse(node.right)
         traverse(self.__root)
         print()
+        
+    def inorder(self):
+        def traverse(node):
+            if not node:
+                return
+            traverse(node.left)
+            print(node.data, end=" ")
+            traverse(node.right)
+        traverse(self.__root)
+        print()
